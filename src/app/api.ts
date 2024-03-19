@@ -1,6 +1,12 @@
 import { ITask } from "@/app/types/tasks"
 
-const baseUrl = "http://localhost:3001"
+let baseUrl : any
+
+if(process.env.NODE_ENV === 'development') {
+    baseUrl = process.env.DOMAIN_URL_LOCAL
+} else {
+    baseUrl = process.env.DOMAIN_URL_PROD
+}
 
 export const getAllTodos = async () => {
     const res = await fetch(`${baseUrl}/tasks`, { cache: 'no-store' })
