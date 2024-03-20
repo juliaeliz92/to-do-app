@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
+    basePath: '/to-do-app',
+    output: "export",  
+    reactStrictMode: true,
 };
 
 export default nextConfig;
